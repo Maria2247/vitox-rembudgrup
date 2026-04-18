@@ -148,7 +148,7 @@
 /* --------HERO------- */
 
 .hero-container {
-  background-image: url('/img/hero-bg.png');
+  background-image: url('../../public/img/hero-bg.png');
   background-color: var(--bg-color);
   background-repeat: no-repeat;
   background-position: right;
