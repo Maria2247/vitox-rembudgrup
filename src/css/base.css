@@ -11,17 +11,11 @@
   /* --decor-blue: #5270ff; */
   --logo-grey: #d6d9e6;
   --accent-color: #50d293;
-
-  /* --bg-main: #cfddeb;
-  --color-blue: #2e4a63;
-  --color-light-blue: #abb7c1;
-  --color-beige: #f1e9dc;
-  --color-light-beige: #fefdfc;
-  --color-accent: #eb6d80;
-  --text-color: #444;
-  --font-header: "Comfortaa", sans-serif;
-  --font-text: "Nunito", sans-serif;
-  --font-accent: "Caveat", sans-serif; */
+}
+html,
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 * {
   box-sizing: border-box;
