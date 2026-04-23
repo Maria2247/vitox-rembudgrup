@@ -61,12 +61,12 @@
   background-color: var(--bg-color);
 }
 
-.section-hero,
+/* .section-hero,
 .section-about,
 .section-services,
 .section-contacts {
   margin-bottom: 24px;
-}
+} */
 
 .section-header-holder {
   background-image: url('../img/line.webp');
@@ -94,8 +94,15 @@
 
 /* -------HEADER------- */
 
+.section-hero {
+  margin-bottom: 24px;
+}
+
 .header-container {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   width: 100%;
   display: flex;
@@ -274,6 +281,11 @@
 
 /* ------ABOUT US------ */
 
+.section-about {
+  margin-bottom: 24px;
+  scroll-margin-top: 62px;
+}
+
 .about-container {
   padding: 0 16px;
 }
@@ -299,28 +311,28 @@
   background-color: var(--secondary-blue);
 }
 
-.ac .ac-trigger {
+.accordion-container .ac .ac-trigger {
   color: var(--bg-color);
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
-.ac .ac-trigger:focus,
-.ac .ac-trigger:active {
+.accordion-container .ac .ac-trigger:focus,
+.accordion-container .ac .ac-trigger:active {
   color: var(--accent-color);
 }
 
-.ac .ac-panel {
+.accordion-container .ac .ac-panel {
   border: 1px solid var(--logo-grey);
 }
 
-.ac .ac-panel .ac-text {
+.accordion-container .ac .ac-panel .ac-text {
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
 }
 
-.ac .ac-panel .ac-text::before {
+.accordion-container .ac .ac-panel .ac-text::before {
   content: ' ';
   display: inline-block;
   width: 8px;
@@ -331,6 +343,11 @@
 }
 
 /* ------SERVICES------- */
+
+.section-services {
+  margin-bottom: 24px;
+  scroll-margin-top: 62px;
+}
 
 .services-container {
   padding: 0 16px;
@@ -362,13 +379,19 @@
 } */
 
 /* -----CONTACTS---- */
+
+.section-contacts {
+  margin-bottom: 24px;
+  scroll-margin-top: 62px;
+}
+
 .contacts-container .section-header {
   text-align: center;
   /* margin-left: -25px; */
 }
 
 .contacts-container .section-header-holder {
-  background-position-x: 60%;
+  background-position-x: 55%;
 }
 
 .contacts-holder {
@@ -385,6 +408,15 @@
   width: 14px;
   height: 14px;
   fill: var(--primary-blue);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts-holder a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-holder a:hover,
@@ -396,17 +428,10 @@
 .contacts-holder a:hover .icon-phone,
 .contacts-holder a:hover .icon-mail,
 .contacts-holder a:focus .icon-mail,
-.contacts-holder a:focus .icon-mail,
+.contacts-holder a:focus .icon-phone,
 .contacts-holder a:active .icon-mail,
-.contacts-holder a:active .icon-mail {
+.contacts-holder a:active .icon-phone {
   fill: var(--accent-color);
-}
-
-.contacts-holder a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
 }
 
 .contacts-holder p {

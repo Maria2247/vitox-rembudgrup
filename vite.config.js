@@ -6,11 +6,23 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
   return {
-    base: '/vitox-rembudgrup/',
+    base: command === 'serve' ? '/' : '/vitox-rembudgrup/',
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
+    server: {
+      watch: {
+        usePolling: true,
+      },
+    },
     // root: 'src',
+    css: {
+      postcss: {
+        plugins: [
+          SortCss({ sort: 'mobile-first' }), // Moved to correct location
+        ],
+      },
+    },
     build: {
       sourcemap: true,
       rollupOptions: {
@@ -57,7 +69,18 @@ export default defineConfig(({ command }) => {
     },
     plugins: [
       injectHTML(),
-      FullReload(['./src/**/**.html']),
+      {
+        name: 'html-reload',
+        handleHotUpdate({ file, server }) {
+          if (file.endsWith('.html')) {
+            server.ws.send({
+              type: 'full-reload',
+              path: '*',
+            });
+          }
+        },
+      },
+      FullReload(['./index.html', './*.html', './src/**/**.html']),
       SortCss({
         sort: 'mobile-first',
       }),
