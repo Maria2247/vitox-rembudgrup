@@ -83,10 +83,6 @@
 
 /* -------HEADER------- */
 
-.section-hero {
-  margin-bottom: 24px;
-}
-
 .header-container {
   position: fixed;
   top: 0;
@@ -98,9 +94,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 32px;
-  /* border-bottom: 1px solid var(--logo-grey); */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: var(--bg-color);
+
+  /* FORCE IPHONE STABILITY */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .nav-logo {
@@ -231,6 +231,7 @@
   background-position: right;
   background-size: cover;
   margin-top: 61px;
+  margin-bottom: 24px;
 }
 
 .hero-text-holder {
