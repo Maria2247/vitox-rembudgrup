@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const burgerBtn = document.getElementById('burger-btn');
+const decorDots = document.getElementsByClassName('.nav-dots');
 const openMenu = document.getElementById('nav-menu');
 const closeBtn = document.getElementById('close-btn');
 const navLink = document.querySelectorAll('.nav-item a');
@@ -17,12 +18,22 @@ const navLink = document.querySelectorAll('.nav-item a');
 burgerBtn.addEventListener('click', () => {
   openMenu.classList.add('is-open');
   closeBtn.classList.add('is-open');
+  decorDots.classList.add('is-open');
 });
 
 function closeMobileNav(e) {
-  e.preventDefault();
   openMenu.classList.remove('is-open');
   closeBtn.classList.remove('is-open');
 }
 
 closeBtn.addEventListener('click', closeMobileNav);
+
+navLink.forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+
+openMenu.addEventListener('click', e => {
+  if (e.target === openMenu) {
+    closeMobileNav();
+  }
+});

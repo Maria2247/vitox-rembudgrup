@@ -2,12 +2,21 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
     <meta name="apple-mobile-web-app-title" content="Vitox" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="./site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,11 +29,8 @@
       rel="stylesheet"
     />
     <title>Vitox-Rembudgrup</title>
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/accordion-js/dist/accordion.min.css"
-    /> -->
-    <link rel="stylesheet" href="./src/css/styles.css" />
+    <!-- <link rel="stylesheet" href="./src/css/styles.css" /> -->
+    <script type="module" src="./src/main.js"></script>
   </head>
   <body>
     <header>
@@ -49,6 +55,11 @@
         </button>
 
         <nav class="main-nav" id="nav-menu">
+          <img
+            src="./src/img/logo-blue.svg"
+            alt="company-logo"
+            class="nav-logo burger-logo"
+          />
           <button
             type="button"
             class="close-btn"
@@ -64,7 +75,15 @@
             <li class="nav-item"><a href="#services">Послуги</a></li>
             <li class="nav-item"><a href="#projects">Проєкти</a></li>
             <li class="nav-item"><a href="#contacts">Контакти</a></li>
+            <li class="list-item"></li>
           </ul>
+          <span class="dots nav-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </nav>
       </div>
     </header>
@@ -294,8 +313,6 @@
         </div>
       </section>
     </main>
-
-    <script type="module" src="./src/main.js"></script>
 
     <svg
       aria-hidden="true"

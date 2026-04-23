@@ -6,7 +6,7 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
   return {
-    base: command === 'serve' ? '/' : '/vitox-rembudgrup/',
+    base: '/vitox-rembudgrup/',
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
@@ -15,12 +15,9 @@ export default defineConfig(({ command }) => {
         usePolling: true,
       },
     },
-    // root: 'src',
     css: {
       postcss: {
-        plugins: [
-          SortCss({ sort: 'mobile-first' }), // Moved to correct location
-        ],
+        plugins: [SortCss({ sort: 'mobile-first' })],
       },
     },
     build: {
@@ -80,14 +77,6 @@ export default defineConfig(({ command }) => {
           }
         },
       },
-      FullReload(['./index.html', './*.html', './src/**/**.html']),
-      SortCss({
-        sort: 'mobile-first',
-      }),
     ],
   };
 });
-
-// const isImage = /\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(
-//   assetInfo.name
-// );
